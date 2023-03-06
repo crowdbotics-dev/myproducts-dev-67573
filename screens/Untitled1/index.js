@@ -26,6 +26,7 @@ const App = () => {
             <View style={styles.messageContainer}>
               <Text style={styles.title}>User Name</Text>
               <Text style={styles.message}>User Message</Text>
+              <Text style={styles.NiwqDqxk}>View More</Text>
             </View>
           </View>} keyExtractor={item => item.id} />
     </SafeAreaView>;
@@ -66,6 +67,11 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 50,
     backgroundColor: 'white'
+  },
+  NiwqDqxk: {
+    padding: 5,
+    alignSelf: "end",
+    color: "#3333ae"
   }
 });
 export default App;
