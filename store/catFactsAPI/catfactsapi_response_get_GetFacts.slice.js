@@ -1,24 +1,24 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import { apiService } from "./api"
-export const catfacts_get_fact_read = createAsyncThunk(
-  "catfacts_response_get_GetFacts/catfacts_get_fact_read",
+export const catfactsapi_get_fact_read = createAsyncThunk(
+  "catfactsapi_response_get_GetFacts/catfactsapi_get_fact_read",
   async payload => {
-    const response = await apiService.catfacts_get_fact_read(payload)
+    const response = await apiService.catfactsapi_get_fact_read(payload)
     return response.data
   }
 )
 const initialState = { entities: [], api: { loading: "idle", error: null } }
-const catfacts_response_get_GetFactsSlice = createSlice({
-  name: "catfacts_response_get_GetFacts",
+const catfactsapi_response_get_GetFactsSlice = createSlice({
+  name: "catfactsapi_response_get_GetFacts",
   initialState,
   reducers: {},
   extraReducers: {
-    [catfacts_get_fact_read.pending]: (state, action) => {
+    [catfactsapi_get_fact_read.pending]: (state, action) => {
       if (state.api.loading === "idle") {
         state.api.loading = "pending"
       }
     },
-    [catfacts_get_fact_read.fulfilled]: (state, action) => {
+    [catfactsapi_get_fact_read.fulfilled]: (state, action) => {
       if (state.api.loading === "pending") {
         state.entities = [
           ...state.entities.filter(record => record.id !== action.payload.id),
@@ -27,7 +27,7 @@ const catfacts_response_get_GetFactsSlice = createSlice({
         state.api.loading = "idle"
       }
     },
-    [catfacts_get_fact_read.rejected]: (state, action) => {
+    [catfactsapi_get_fact_read.rejected]: (state, action) => {
       if (state.api.loading === "pending") {
         state.api.error = action.error
         state.api.loading = "idle"
@@ -36,6 +36,6 @@ const catfacts_response_get_GetFactsSlice = createSlice({
   }
 })
 export default {
-  catfacts_get_fact_read,
-  slice: catfacts_response_get_GetFactsSlice
+  catfactsapi_get_fact_read,
+  slice: catfactsapi_response_get_GetFactsSlice
 }
