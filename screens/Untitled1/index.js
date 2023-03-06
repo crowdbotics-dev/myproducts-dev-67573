@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux";
 import React from 'react';
 import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar } from 'react-native';
 const globalVariable = "I am a global variable (in this screen file).";
@@ -20,7 +19,6 @@ const DATA = [{
 }];
 
 const App = () => {
-  const Users = useSelector(state => state.Users);
   return <SafeAreaView style={styles.container}>
       <FlatList data={DATA} renderItem={({
       item
