@@ -2,7 +2,7 @@ export const globalOptions = {
   "name": "myproducts-dev-67573",
   "url": "https://myproducts-dev-67573.botics.co",
   "api": "https://myproducts-dev-67573.botics.co/api/v1",
-  "initialRoute": "Untitled1"
+  "initialRoute": "Untitled7"
 };
 export const modulesOptions = {
   "@modules/app-menu": {
