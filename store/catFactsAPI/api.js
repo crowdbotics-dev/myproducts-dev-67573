@@ -1,16 +1,9 @@
-import axios from "axios";
+import axios from "axios"
 const catFactsAPI = axios.create({
   baseURL: "https://catfact.ninja",
-  headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json"
-  }
-});
-
+  headers: { Accept: "application/json", "Content-Type": "application/json" }
+})
 function catfactsapi_get_fact_read(payload) {
-  return catFactsAPI.get(`/fact`);
+  return catFactsAPI.get(`/fact`)
 }
-
-export const apiService = {
-  catfactsapi_get_fact_read
-};
+export const apiService = { catfactsapi_get_fact_read }
